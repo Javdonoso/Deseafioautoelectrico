@@ -1,0 +1,39 @@
+nav {
+    padding: 10px;
+    color: white;
+    background-color: rgb(113, 113, 210);
+    grid-area: menu_nav;
+}
+
+main {
+    padding: 10px;
+    grid-area: principal;
+}
+
+footer {
+    padding: 10px;
+    color: white;
+    background-color: red;
+    grid-area: pie_pagina;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* .filtro {
+    width: 1777px;
+} */
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    /* justify-content: center; */
+    width: 80%;
+    height: 80%;
+}
