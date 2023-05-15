@@ -1,39 +1,109 @@
-nav {
-    padding: 10px;
-    color: white;
-    background-color: rgb(113, 113, 210);
-    grid-area: menu_nav;
-}
-
 main {
-    padding: 10px;
-    grid-area: principal;
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "menu_nav"
+        "filtro"
+        "productos"
+        "footer";
 }
 
-footer {
+nav {
+    grid-area: menu_nav;
     padding: 10px;
     color: white;
-    background-color: red;
-    grid-area: pie_pagina;
+    background-color: #00579c;
+    flex-direction: column;
+    text-align: center;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.head {
+    display: flex;
+    justify-content: space-around;
 }
 
-/* .filtro {
-    width: 1777px;
-} */
 
-.tarjeta {
+.menu a {
+    color: #FFF;
+}
+
+section {
+    grid-area: filtro;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+    background-color: #E2e2e2;
+}
+
+
+
+.tarjetas {
+    grid-area: productos;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: auto;
+    padding: 10px;
+    gap: 10px;
+    row-gap: 10px;
+    overflow: auto;
+}
+
+.card {
     display: flex;
     flex-direction: column;
+    text-align: center;
     border: 1px solid #ccc;
     padding: 10px;
+    justify-content: center;
+}
+
+
+footer {
+    grid-area: footer;
+    color: white;
+    background-color: #012f6b;
+    flex-direction: column;
     text-align: center;
-    /* justify-content: center; */
-    width: 80%;
-    height: 80%;
+}
+
+
+.compaginador {
+    background-color: #6f6e6e;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 0%;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 45px;
+    height: 0px;
+
+}
+
+
+
+@media (min-width: 576px) {
+    main {
+        grid-template-areas:
+            "menu_nav filtro filtro"
+            "menu_nav productos productos"
+            "footer productos productos";
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 5fr;
+    }
+
+    .barra {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .tarjetas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .menu {
+        display: none;
+    }
 }
